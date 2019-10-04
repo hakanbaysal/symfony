@@ -4,6 +4,20 @@ use App\Kernel;
 use Symfony\Component\Debug\Debug;
 use Symfony\Component\HttpFoundation\Request;
 
+function pp($val, $isDie = 0, $isVarDump = 0)
+{
+
+    if ($isVarDump != 0)
+        var_dump($val);
+    else {
+        echo '<pre>';
+        print_r($val);
+        echo '</pre>';
+    }
+    if ($isDie != 0)
+        die;
+}
+
 require dirname(__DIR__).'/config/bootstrap.php';
 
 if ($_SERVER['APP_DEBUG']) {
